@@ -1,0 +1,43 @@
+<%- include('headers/header')%>
+  <%- include('headers/navigation')%>
+
+    <style>
+      .register-container {
+        width: 100%;
+        min-height: 80vh;
+      }
+    </style>
+
+    <div class="register-container">
+
+
+      <form class="container pt-2" action="/admin/update/<%= user._id %>" method="POST" enctype="multipart/form-data">
+        <h3 class="text-decoration-underline">Update User </h3>
+        <div class="mb-3">
+          <label class="form-label">Email address</label>
+          <input name="email" type="email" value="<%= user.email %>" class="form-control">
+          <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input name="name" type="text" value="<%= user.name %>" class="form-control">
+          <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+
+          <label class="form-label">Avatar</label>
+          <input name="avatar" type="file" class="form-control">
+          <br>
+          <input type="hidden" value="<%= user.avatar%>" name="oldavatar">
+          <%= user.avatar%>
+            <img width="200" src="/images/<%= user.avatar%>" alt="">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update User</button>
+      </form>
+
+    </div>
+
+    <%- include('headers/footer')%>

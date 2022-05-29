@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.movies{
+    min-height: 33vw;
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    /* background-color: tomato; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movies::-webkit-scrollbar{
+    height: 10px;
+    /* background-color: rgb(63, 63, 63); */
+    background: linear-gradient(to bottom,violet,indigo,blue,green,yellow,orange,red);
+}
+.movies::-webkit-scrollbar-thumb{
+    /* height: 5px; */
+    background-color: rgb(185, 184, 184);
+    border-radius: 100px;
+}
+.cnt,.cnt2{
+    height: 20vw;
+    width: 13vw;
+    margin: 1vw 0vw 1vw 1vw;
+    background-color: rgba(48, 48, 48, 0.541);
+    border-radius: 5px;
+    -webkit-transition: all 2s cubic-bezier(.5, -0.005, 0.2, 1) !important;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+.cnt img{
+    height: 11vw;
+    width: 13vw;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 0.5vw;
+}
+.cnt:hover{
+    transform: scale(1.09);
+}
+ion-icon[name="star"]{
+    color: gold;
+}
+ion-icon[name="play"]{
+    color: rgb(216, 216, 216);
+    margin-right: 0.6vw;
+}
+ion-icon[name="add"]{
+    font-size: 1vw;
+}
+.content{
+    height: 9vw;
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5vw;
+}
+.trailer{
+    height: 1vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    /* margin-top: 0.5vw; */
+    border-radius: 0.3vw;
+    font-size: 1vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.date{
+    color: rgba(255, 255, 255, 0.363);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.star,.date,.title{
+    font-size: 0.9vw;
 }
-
-.App-link {
-  color: #61dafb;
+.watchlist{
+    color: #5799ef;
+    font-size: 0.8vw;
+    height: 1vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(88, 88, 88, 0.178);
+    /* margin-top: 0.5vw; */
+    border-radius: 0.3vw;
+    cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+    display: flex;
+    align-items: center;
+    font-family: Gilroy;
+    font-size: 3vw;
+    padding: 1vw;
+}
+a{
+    text-decoration: none;
+    color: white;
+    border-radius: 0.3vw;
+    -webkit-transition: all 2s cubic-bezier(.5, -0.005, 0.2, 1) !important;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+a:hover{
+    background-color: rgb(56, 56, 56);
+}
+h2{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: aqua;
+}
+.moviesd{
+    height: 46.95vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cntd{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40vw;
+    width: 90vw;
+    background-color: rgba(48, 48, 48, 0.541);
+    border-radius: 5px;
+    -webkit-transition: all 2s cubic-bezier(.5, -0.005, 0.2, 1) !important;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+    padding: 1vw;
+}
+.dated{
+    color: rgba(255, 255, 255, 0.363);
+}
+.stard,.dated{
+    font-size: 1.3vw;
+}
+.titled{
+    font-size: 2.3vw;
+}
+.cntd img{
+    height: 38vw;
+    width: 25vw;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 0.5vw;
+}
+.contentd{
+    height: 40vw;
+    width: 58vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5vw;
+}
+.trailerd{
+    height: 3vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 31, 31);
+    /* margin-top: 0.5vw; */
+    border-radius: 0.3vw;
+    font-size: 1.5vw;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+.trailerd:hover{
+    background-color: rgb(56, 56, 56);
 }

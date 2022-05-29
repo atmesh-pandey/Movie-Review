@@ -1,0 +1,31 @@
+<%- include('headers/header')%>
+    <%- include('headers/navigation')%>
+        <h1>This is User Profile Page</h1>
+
+        <div class="container align-items-start flex-wrap d-flex p-3">
+
+            <% users.forEach(user=> { %>
+                <div class="card me-2 mb-2" style="width: 18rem;">
+                    <img class="card-img-top" src="/uploads/<%= user.avatar %>" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">
+                        <h4>
+                            <%= user.name %>
+                        </h4>
+                        <small class="text-muted">
+                            <%= user.email%>
+                        </small>
+                        <hr>
+                        <%# if(user.role==="admin" ) { %>
+                            <div class="w-100 d-flex justify-content-between">
+                                <a href="/admin/update/<%= user._id %>" class="btn btn-sm btn-primary">Update</a>
+                                <a href="/admin/delete/<%= user._id%>" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                            <%# }%>
+                                </p>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+
+        <%- include('headers/footer')%>
